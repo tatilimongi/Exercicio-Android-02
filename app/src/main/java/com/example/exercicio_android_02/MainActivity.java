@@ -1,6 +1,7 @@
 package com.example.exercicio_android_02;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,30 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Smartphone smartphone = new Smartphone("Celular", "Samsung", "Galaxy S21", "Roxo", true, false, "Android", false);
+        Computador computador = new Computador("Notebook", "Dell", "Latitude 5420", "Preto", true, true, "Windows 10", true);
+
+        smartphone.ligar();
+        computador.ligar();
+
+        smartphone.desligar();
+        computador.desligar();
+
+        smartphone.volumeUp();
+        computador.volumeUp();
+
+        smartphone.volumeDown();
+        computador.volumeDown();
+
+        smartphone.verificarSistemaOperativo();
+        smartphone.verificarGpsAtivo();
+
+        computador.ligarMonitor();
+        computador.desligarMonitor();
+
+        Log.i("SmartphoneInfo", smartphone.toString());
+        Log.i("ComputadorInfo", computador.toString());
+
     }
 }
